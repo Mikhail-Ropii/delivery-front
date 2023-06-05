@@ -1,6 +1,5 @@
-import css from "./styles.module.css";
 import { useSelector } from "react-redux";
-import { GoogleMap, Marker } from "@react-google-maps/api";
+import { GoogleMap, MarkerF } from "@react-google-maps/api";
 
 export const Map = ({ userLocation, isLoaded }) => {
   const shopLocation = useSelector((state) => state.cart.shopLocation);
@@ -26,14 +25,14 @@ export const Map = ({ userLocation, isLoaded }) => {
             lng: 30.528437,
           }}
         >
-          <Marker
+          <MarkerF
             position={{
               lat: parseFloat(shopLocation.lat),
               lng: parseFloat(shopLocation.lng),
             }}
           />
           {userLocation && (
-            <Marker
+            <MarkerF
               position={{
                 lat: parseFloat(userLocation.lat),
                 lng: parseFloat(userLocation.lng),

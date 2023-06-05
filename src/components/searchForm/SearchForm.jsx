@@ -1,17 +1,32 @@
 import { MainButton } from "../mainButton/MainButton";
 import css from "./styles.module.css";
 
-export const SearchForm = ({ setSearchValue, searchData, onSearch }) => {
+import { formatingPhone } from "../../helpers/formatingPhone";
+
+export const SearchForm = ({
+  setSearchData,
+  searchData,
+  onSearch,
+  isFormValid,
+}) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setSearchValue((prevData) => ({
+    if (name === "phone") {
+      const formatedPhone = formatingPhone(value);
+      setSearchData((prevData) => ({
+        ...prevData,
+        phone: formatedPhone,
+      }));
+      return;
+    }
+    setSearchData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
   return (
-    <>
+    <div className={css.formWrap}>
       <form className={css.form}>
         <div>
           <label>
@@ -32,7 +47,7 @@ export const SearchForm = ({ setSearchValue, searchData, onSearch }) => {
             Phone:
             <input
               autoComplete="off"
-              placeholder="+38 (093) 555-55-55"
+              placeholder="(093)5555555"
               required
               type="text"
               name="phone"
@@ -43,6 +58,7 @@ export const SearchForm = ({ setSearchValue, searchData, onSearch }) => {
         </div>
       </form>
       <MainButton onClick={onSearch}>Search orders</MainButton>
-    </>
+      {!isFormValid && <p className={css.invalidMsg}>Fill all fields!</p>}
+    </div>
   );
 };

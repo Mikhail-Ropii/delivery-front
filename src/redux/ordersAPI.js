@@ -28,4 +28,8 @@ export const ordersAPI = createApi({
   }),
 });
 
-export const { usePlaceOrderMutation, useGetOrdersByUserQuery } = ordersAPI;
+export const {
+  usePlaceOrderMutation,
+  useGetOrdersByUserQuery,
+  useLazyGetOrdersByUserQuery,
+} = ordersAPI;

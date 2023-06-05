@@ -1,15 +1,25 @@
 import css from "./styles.module.css";
 import { Autocomplete } from "@react-google-maps/api";
 
+import { formatingPhone } from "../../helpers/formatingPhone";
+
 export const UserForm = ({
   userData,
   setUserData,
-  isFormValid = true,
+  isFormValid,
   setLocation,
   isLoaded,
 }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === "phone") {
+      const formatedPhone = formatingPhone(value);
+      setUserData((prevData) => ({
+        ...prevData,
+        phone: formatedPhone,
+      }));
+      return;
+    }
     setUserData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -23,12 +33,16 @@ export const UserForm = ({
   };
 
   const onPlaceChanged = () => {
-    if (autocomplete !== null) {
-      const places = autocomplete.getPlace();
+    const places = autocomplete?.getPlace();
+    if (autocomplete && places !== undefined) {
+      console.log(places);
       const lat = places.geometry.location.lat();
       const lng = places.geometry.location.lng();
-
       setLocation({ lat, lng });
+      setUserData((prevData) => ({
+        ...prevData,
+        address: places.formatted_address,
+      }));
     }
   };
 
@@ -68,7 +82,7 @@ export const UserForm = ({
             Phone:
             <input
               autoComplete="off"
-              placeholder="+38 (093) 555-55-55"
+              placeholder="(093)5555555"
               required
               type="text"
               name="phone"
@@ -84,17 +98,18 @@ export const UserForm = ({
               <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
                 <input
                   autoComplete="off"
-                  // name="address"
+                  name="address"
                   type="text"
                   placeholder="Start typing your address"
                   className={css.autocomplete}
+                  onChange={handleChange}
+                  value={userData.address}
                 />
               </Autocomplete>
             </label>
           </>
         )}
       </form>
-
       {!isFormValid && <p className={css.invalidMsg}>Fill all fields!</p>}
     </>
   );
