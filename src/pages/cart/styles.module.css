@@ -1,0 +1,40 @@
+.pageContent {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.mainContentWrap {
+  display: flex;
+  height: 100%;
+  margin-bottom: 15px;
+}
+
+.userWrap {
+  padding: 20px 60px 20px 30px;
+  border: 1px solid #2196f3;
+  border-radius: 10px;
+  margin-right: 20px;
+  min-width: 350px;
+}
+
+.mainText {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  margin-right: 30px;
+}
+
+.productsWrap {
+  padding: 20px;
+  border: 1px solid #2196f3;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.orderResume {
+  display: flex;
+  align-self: flex-end;
+  align-items: baseline;
+}

@@ -1,36 +1,19 @@
-.imagesWrap {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 17px;
-  row-gap: 17px;
+.pageContent {
+  height: 90vh;
+}
+
+.inputWrap {
+  padding: 20px;
+  border: 1px solid #2196f3;
+  border-radius: 10px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
-.title {
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 42px;
-  text-align: center;
-
-  color: #212121;
-  margin-bottom: 10px;
-}
-
-.line {
-  height: 2px;
-  width: 100%;
-  background-color: #f5f4fa;
-  margin-bottom: 10px;
-}
-
-.fieldName {
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.article {
-  margin-bottom: 5px;
-  font-weight: 400;
-  font-size: 16px;
+.historyWrap {
+  padding: 20px;
+  border: 1px solid #2196f3;
+  border-radius: 10px;
+  height: 60%;
 }

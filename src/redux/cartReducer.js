@@ -4,21 +4,41 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState: {
     cart: [],
+    sum: 0,
+    shopLocation: {},
   },
   reducers: {
     addToCart: (state, { payload }) => {
-      state.cart.push({ ...payload, qty: 1 });
+      state.cart.push(payload);
     },
-    addQty: (state, { payload }) => {
-      state.cart = state.cart.map((product) => {
-        if (product.id === payload) {
-          product.qty = product.qty + 1;
+    setShopLocation: (state, { payload }) => {
+      state.shopLocation = { ...payload };
+    },
+    minusQty: (state, { payload }) => {
+      state.cart.map((product) => {
+        if (product._id === payload) {
+          product.qty -= 1;
+          product.totalPrice = product.qty * product.price;
         }
         return product;
       });
     },
+    plusQty: (state, { payload }) => {
+      state.cart.map((product) => {
+        if (product._id === payload) {
+          product.qty += 1;
+          product.totalPrice = product.qty * product.price;
+        }
+        return product;
+      });
+    },
+    changeSum: (state) => {
+      state.sum = state.cart.reduce((sum, current) => {
+        return sum + current.price * current.qty;
+      }, 0);
+    },
     removeFromCart: (state, { payload }) => {
-      state.cart = state.cart.filter((product) => product.id !== payload);
+      state.cart = state.cart.filter((product) => product._id !== payload);
     },
   },
 });

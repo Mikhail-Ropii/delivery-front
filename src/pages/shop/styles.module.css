@@ -1,11 +1,27 @@
+.shopPageContent {
+  display: flex;
+  height: 90vh;
+}
+
 .shopsWrap {
-  margin: 20px;
+  padding: 20px 40px;
   border: 1px solid #2196f3;
   border-radius: 10px;
+  margin-right: 20px;
+  min-width: 200px;
 }
 
 .mainText {
-  font-weight: 500;
-  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
   line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.productsWrap {
+  padding: 20px;
+  border: 1px solid #2196f3;
+  border-radius: 10px;
+  width: 100%;
 }

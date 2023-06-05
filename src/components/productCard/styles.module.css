@@ -11,24 +11,37 @@
   border-radius: 0px 0px 4px 4px;
 }
 
-.photo {
-  max-width: 300px;
-  max-height: 300px;
-  margin-top: 5px;
+.imgThumb {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .btnWrap {
-  display: flex;
+  margin-left: auto;
 }
 
 .btn:not(:last-child) {
   margin-right: 5px;
 }
 
-.heroName {
+.productName {
   font-size: 16px;
   font-weight: 700;
 
   color: #212121;
-  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.productPrice {
+  margin-bottom: 5px;
+  color: red;
 }

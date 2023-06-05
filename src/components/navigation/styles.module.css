@@ -18,7 +18,7 @@
   color: #0e7ed9;
 }
 
-.active,
+.active:not(:last-child),
 .link:not(:last-child) {
   margin-right: 15px;
 }

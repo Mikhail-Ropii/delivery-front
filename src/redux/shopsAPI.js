@@ -27,4 +27,8 @@ export const shopsAPI = createApi({
   }),
 });
 
-export const { useGetShopsListQuery, useGetProductsByShopIdQuery } = shopsAPI;
+export const {
+  useGetShopsListQuery,
+  useGetProductsByShopIdQuery,
+  useLazyGetProductsByShopIdQuery,
+} = shopsAPI;

@@ -3,5 +3,11 @@ import { Container } from "../container/Container";
 import { Navigation } from "../navigation/Navigation";
 
 export const Header = () => {
-  return <Navigation />;
+  return (
+    <Container>
+      <div className={css.headerWrap}>
+        <Navigation />
+      </div>
+    </Container>
+  );
 };

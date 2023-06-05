@@ -1,0 +1,9 @@
+.productsCardsWrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 17px;
+  row-gap: 17px;
+  justify-items: center;
+  overflow-y: scroll;
+  height: 100%;
+}
