@@ -7,7 +7,7 @@ https://github.com/Mikhail-Ropii/delivery-front
 
 https://github.com/Mikhail-Ropii/delivery-back
 
-To run this solution locally you should download repo (delivery-front and delivery-back) and open in your IDE back and front separately. Change base URL in file baseURL.js in "delivery-front" repo.
+To run this solution locally you should download repo (delivery-front and delivery-back) and open in your IDE back and front separately. Change base URL in file baseURL.js in "delivery-front" repo to http://localhost:3001.
 Install required dependencies in both parts:
 ```
 npm install
