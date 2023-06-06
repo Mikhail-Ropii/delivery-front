@@ -22,6 +22,7 @@ export const Shop = () => {
     if (cart.length !== 0) {
       setCurrentShop(cart[0].shop);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
