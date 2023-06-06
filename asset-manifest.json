@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/delivery-front/static/css/main.db11d715.css",
+    "main.js": "/delivery-front/static/js/main.53eda744.js",
+    "static/js/787.c5ec21d9.chunk.js": "/delivery-front/static/js/787.c5ec21d9.chunk.js",
+    "index.html": "/delivery-front/index.html",
+    "main.db11d715.css.map": "/delivery-front/static/css/main.db11d715.css.map",
+    "main.53eda744.js.map": "/delivery-front/static/js/main.53eda744.js.map",
+    "787.c5ec21d9.chunk.js.map": "/delivery-front/static/js/787.c5ec21d9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db11d715.css",
+    "static/js/main.53eda744.js"
+  ]
+}
