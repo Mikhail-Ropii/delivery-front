@@ -16,7 +16,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <HashRouter basename="delivery-front">
+        <HashRouter basename="/delivery-front">
           <App />
           <ToastContainer />
         </HashRouter>
