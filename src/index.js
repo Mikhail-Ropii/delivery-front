@@ -5,7 +5,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store";
 import { Provider } from "react-redux";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 
 import { ToastContainer } from "react-toastify";
@@ -16,10 +16,10 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="delivery-front">
+        <HashRouter basename="delivery-front">
           <App />
           <ToastContainer />
-        </BrowserRouter>
+        </HashRouter>
       </PersistGate>
     </Provider>
   </React.StrictMode>
