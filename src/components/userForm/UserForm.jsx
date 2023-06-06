@@ -35,7 +35,6 @@ export const UserForm = ({
   const onPlaceChanged = () => {
     const places = autocomplete?.getPlace();
     if (autocomplete && places !== undefined) {
-      console.log(places);
       const lat = places.geometry.location.lat();
       const lng = places.geometry.location.lng();
       setLocation({ lat, lng });
