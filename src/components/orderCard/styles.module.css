@@ -1,7 +1,4 @@
-.cardThumb {
-  display: flex;
-  align-items: center;
-
+.orderWrap {
   padding: 10px;
   background: #f5f4fa;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -9,8 +6,17 @@
   border-radius: 0px 0px 4px 4px;
 }
 
+.mealWrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 17px;
+  row-gap: 17px;
+  justify-items: center;
+  margin-bottom: 10px;
+}
+
 .imgThumb {
-  width: 200px;
+  width: 150px;
   height: 100px;
   overflow: hidden;
   margin-right: 40px;
@@ -23,35 +29,6 @@
   object-position: center;
 }
 
-.counterWrap {
-  display: flex;
-  margin-bottom: 5px;
-  align-items: center;
-}
-
-.counterNum {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.countBtn {
-  cursor: pointer;
-}
-
-.removeBtn {
-  background-color: #e53131;
-  border: 0;
-  border-radius: 4px;
-  padding: 5px 10px;
-  color: #ffffff;
-  cursor: pointer;
-  transition: 0.35s;
-
-  &:hover {
-    background-color: #d61414;
-  }
-}
-
 .productName {
   font-size: 16px;
   font-weight: 700;
@@ -62,5 +39,16 @@
 
 .productPrice {
   margin-bottom: 5px;
+  color: red;
+}
+
+.sumText {
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #212121;
+}
+
+.sumNumber {
   color: red;
 }

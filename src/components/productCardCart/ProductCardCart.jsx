@@ -15,7 +15,9 @@ export const ProductCardCart = ({
       </div>
       <div>
         <p className={css.productName}>{product.name}</p>
-        <p className={css.productPrice}>{normolizeTotalPrice} $</p>
+        <p className={css.productPrice}>
+          {product.price} x {product.qty} = {normolizeTotalPrice} $
+        </p>
         <div className={css.counterWrap}>
           <div className={css.countBtn} onClick={() => onMinusBtn(product)}>
             <AiFillMinusCircle size={22} color="#2196f3" />

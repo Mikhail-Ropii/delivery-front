@@ -1,7 +1,8 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import css from "./styles.module.css";
 import { useState } from "react";
 import { usePlaceOrderMutation } from "../../redux/ordersAPI";
+import { cartSlice } from "../../redux/cartReducer";
 
 //Components
 import { Container } from "../../components/container/Container";
@@ -21,6 +22,7 @@ export const Cart = () => {
     phone: "",
     address: "",
   };
+  const dispatch = useDispatch();
   const [location, setLocation] = useState({});
   const [userData, setUserData] = useState(initialValue);
   const [isFormValid, setIsFormValid] = useState(true);
@@ -44,6 +46,7 @@ export const Cart = () => {
       setIsFormValid(true);
       placeOrder({ cart, sum, userData });
       setUserData(initialValue);
+      dispatch(cartSlice.actions.resetCart());
     } else {
       setIsFormValid(false);
     }

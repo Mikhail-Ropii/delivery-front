@@ -3,9 +3,9 @@ import css from "./styles.module.css";
 
 export const OrdersList = ({ orders }) => {
   return (
-    <ul className={css.productsCardsWrap}>
+    <ul className={css.orderCardsWrap}>
       {orders.map((item) => (
-        <li key={item._id}>
+        <li className={css.orderItem} key={item._id}>
           <OrderCard order={item} />
         </li>
       ))}

@@ -95,12 +95,19 @@ export const UserForm = ({
           <>
             <label>
               Address:
-              <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+              <Autocomplete
+                options={{
+                  types: ["address"],
+                  componentRestrictions: { country: "ua" },
+                }}
+                onLoad={onLoad}
+                onPlaceChanged={onPlaceChanged}
+              >
                 <input
                   autoComplete="off"
                   name="address"
                   type="text"
-                  placeholder="Start typing your address"
+                  placeholder="Start typing your address in Kiev region"
                   className={css.autocomplete}
                   onChange={handleChange}
                   value={userData.address}

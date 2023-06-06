@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialValue = {
+  cart: [],
+  sum: 0,
+  shopLocation: {},
+};
+
 export const cartSlice = createSlice({
   name: "cart",
-  initialState: {
-    cart: [],
-    sum: 0,
-    shopLocation: {},
-  },
+  initialState: initialValue,
   reducers: {
     addToCart: (state, { payload }) => {
       state.cart.push(payload);
@@ -39,6 +41,9 @@ export const cartSlice = createSlice({
     },
     removeFromCart: (state, { payload }) => {
       state.cart = state.cart.filter((product) => product._id !== payload);
+    },
+    resetCart: (state) => {
+      return (state = initialValue);
     },
   },
 });

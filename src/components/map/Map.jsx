@@ -8,10 +8,6 @@ export const Map = ({ userLocation, isLoaded }) => {
     <>
       {isLoaded && (
         <GoogleMap
-          options={{
-            types: ["address"],
-            componentRestrictions: { country: "ua" },
-          }}
           id="map"
           mapContainerStyle={{
             height: "200px",
