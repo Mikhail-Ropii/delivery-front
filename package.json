@@ -2,7 +2,7 @@
   "name": "delivery-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mikhail-ropii.github.io/delivery-front/",
+  "homepage": "https://vercel.com/",
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.1.35",
     "@react-google-maps/api": "^2.18.1",
