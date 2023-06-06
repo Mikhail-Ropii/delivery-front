@@ -8,6 +8,7 @@ https://github.com/Mikhail-Ropii/delivery-front
 https://github.com/Mikhail-Ropii/delivery-back
 
 To run this solution locally you should download repo (delivery-front and delivery-back) and open in your IDE back and front separately. Change base URL in file baseURL.js in "delivery-front" repo to http://localhost:3001, add .env to root directory and write REACT_APP_MAPS_API_KEY=AIzaSyCULHS6Xf14bTZsOq0Ii9648XhuHPPkGSk
+
 Install required dependencies in both parts:
 ```
 npm install
