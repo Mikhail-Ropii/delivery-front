@@ -2,6 +2,7 @@ import css from "./styles.module.css";
 import { Autocomplete } from "@react-google-maps/api";
 
 import { formatingPhone } from "../../helpers/formatingPhone";
+import { useState } from "react";
 
 export const UserForm = ({
   userData,
@@ -10,6 +11,8 @@ export const UserForm = ({
   setLocation,
   isLoaded,
 }) => {
+  const [searchResult, setSearchResult] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "phone") {
@@ -26,15 +29,16 @@ export const UserForm = ({
     }));
   };
 
-  let autocomplete;
-
-  const onLoad = (ac) => {
-    autocomplete = ac;
+  const onLoad = (autocomplete) => {
+    setSearchResult(autocomplete);
   };
 
   const onPlaceChanged = () => {
-    const places = autocomplete?.getPlace();
-    if (autocomplete && places !== undefined) {
+    if (searchResult) {
+      const places = searchResult.getPlace();
+      if (places.geometry === undefined) {
+        return;
+      }
       const lat = places.geometry.location.lat();
       const lng = places.geometry.location.lng();
       setLocation({ lat, lng });
