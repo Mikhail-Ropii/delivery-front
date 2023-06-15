@@ -6,7 +6,7 @@ export const MainButton = ({ children, onClick, disabled = false }) => {
       disabled={disabled}
       type="button"
       onClick={onClick}
-      className={css.addBtn}
+      className={css.btn}
     >
       {children}
     </button>

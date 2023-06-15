@@ -2,8 +2,11 @@ import css from "./styles.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { cartSlice } from "../../redux/cartReducer";
 import { useGetProductsByShopIdQuery } from "../../redux/shopsAPI";
+import { useMediaQuery } from "react-responsive";
+
 //Components
 import { ProductCard } from "../productCard/ProductCard";
+import HomeImage from "../../img/Online_Shoping.jpg";
 
 export const Products = ({ currentShop }) => {
   const dispatch = useDispatch();
@@ -21,12 +24,14 @@ export const Products = ({ currentShop }) => {
     return cart.some((obj) => obj._id === id);
   };
 
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
   return (
     <>
-      {data && (
+      {data ? (
         <ul className={css.productsCardsWrap}>
           {data.map((item) => (
-            <li key={item._id}>
+            <li className={css.productCardItem} key={item._id}>
               <ProductCard
                 isInCart={isInCart}
                 product={item}
@@ -35,6 +40,15 @@ export const Products = ({ currentShop }) => {
             </li>
           ))}
         </ul>
+      ) : (
+        <>
+          {isMobile && (
+            <p className={css.startText}>
+              Choose you favourite restoran and start shoping!
+            </p>
+          )}
+          <img className={css.homeImg} src={HomeImage} alt="Delivery" />
+        </>
       )}
     </>
   );

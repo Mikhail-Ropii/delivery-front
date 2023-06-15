@@ -3,11 +3,21 @@
   flex-direction: column;
   height: 80vh;
 }
+@media (max-width: 767px) {
+  .pageContent {
+    height: 100%;
+  }
+}
 
 .mainContentWrap {
   display: flex;
   height: 100%;
   margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .mainContentWrap {
+    flex-direction: column-reverse;
+  }
 }
 
 .userWrap {
@@ -15,7 +25,19 @@
   border: 1px solid #2196f3;
   border-radius: 10px;
   margin-right: 20px;
-  min-width: 400px;
+  min-width: 45%;
+}
+@media (max-width: 1023px) {
+  .userWrap {
+    min-width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .userWrap {
+    min-width: auto;
+    margin-right: 0;
+    padding: 15px;
+  }
 }
 
 .mainText {
@@ -31,6 +53,12 @@
   border: 1px solid #2196f3;
   border-radius: 10px;
   width: 100%;
+}
+@media (max-width: 767px) {
+  .productsWrap {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
 }
 
 .orderResume {

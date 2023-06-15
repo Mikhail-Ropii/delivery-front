@@ -17,6 +17,12 @@
   overflow: hidden;
   margin-bottom: 5px;
 }
+@media (max-width: 767px) {
+  .imgThumb {
+    width: 100%;
+    height: 250px;
+  }
+}
 
 .img {
   width: 100%;

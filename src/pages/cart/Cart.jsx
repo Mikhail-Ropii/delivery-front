@@ -3,6 +3,7 @@ import css from "./styles.module.css";
 import { useState } from "react";
 import { usePlaceOrderMutation } from "../../redux/ordersAPI";
 import { cartSlice } from "../../redux/cartReducer";
+import { useMediaQuery } from "react-responsive";
 
 //Components
 import { Container } from "../../components/container/Container";
@@ -52,6 +53,8 @@ export const Cart = () => {
     }
   };
 
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
   return (
     <Container>
       <div className={css.pageContent}>
@@ -66,6 +69,11 @@ export const Cart = () => {
               isFormValid={isFormValid}
             />
           </div>
+          {isMobile && (
+            <p style={{ marginBottom: 15 }} className={css.mainText}>
+              Total price: {sum.toFixed(2)} $
+            </p>
+          )}
           <div className={css.productsWrap}>{<CartBlock />}</div>
         </div>
         <div className={css.orderResume}>
