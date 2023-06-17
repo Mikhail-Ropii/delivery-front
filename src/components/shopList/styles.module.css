@@ -15,6 +15,7 @@
   font-weight: 500;
   font-size: 25px;
   line-height: 47px;
+  white-space: nowrap;
   width: 100%;
 
   cursor: pointer;

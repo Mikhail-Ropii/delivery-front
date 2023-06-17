@@ -8,7 +8,7 @@ import { useMediaQuery } from "react-responsive";
 import { ProductCard } from "../productCard/ProductCard";
 import HomeImage from "../../img/Online_Shoping.jpg";
 
-export const Products = ({ currentShop }) => {
+export const ProductsList = ({ currentShop }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
 
@@ -44,7 +44,7 @@ export const Products = ({ currentShop }) => {
         <>
           {isMobile && (
             <p className={css.startText}>
-              Choose you favourite restoran and start shoping!
+              Choose you favourite restaurant and start shoping!
             </p>
           )}
           <img className={css.homeImg} src={HomeImage} alt="Delivery" />

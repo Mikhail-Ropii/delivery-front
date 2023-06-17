@@ -14,12 +14,26 @@
   justify-items: center;
   margin-bottom: 10px;
 }
+@media (max-width: 767px) {
+  .mealWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 .imgThumb {
   width: 150px;
   height: 100px;
   overflow: hidden;
   margin-right: 40px;
+}
+@media (max-width: 767px) {
+  .imgThumb {
+    width: 200px;
+    margin-right: 0;
+  }
 }
 
 .img {

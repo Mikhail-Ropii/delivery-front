@@ -22,6 +22,8 @@ export const History = () => {
     }
   };
 
+  console.log(data);
+
   return (
     <Container>
       <div className={css.pageContent}>

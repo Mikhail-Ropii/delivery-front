@@ -5,9 +5,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 //Components
 import { ShopList } from "../../components/shopList/ShopList";
-import { Products } from "../../components/products/Products";
+import { ProductsList } from "../../components/productsList/ProductsList";
 import { Container } from "../../components/container/Container";
-
+//Icons
 import { AiOutlineShop } from "react-icons/ai";
 
 export const Shop = () => {
@@ -74,7 +74,7 @@ export const Shop = () => {
         )}
 
         <div className={css.productsWrap}>
-          <Products currentShop={currentShop} />
+          <ProductsList currentShop={currentShop} />
         </div>
       </div>
     </Container>
