@@ -1,5 +1,7 @@
 # delivery-app
-Live page: https://mikhail-ropii.github.io/delivery-front/
+Next.js version (serverless) repo: https://github.com/Mikhail-Ropii/next-app
+
+Live page: https://next-app-mikhail-ropii.vercel.app/
 
 Repo:
 
